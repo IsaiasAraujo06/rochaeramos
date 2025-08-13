@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocha & Ramos Advocacia</title>
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Reset e configurações básicas */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 80px;
+            background-size: cover;
+        }
+
+        .hero-content {
+            max-width: 500px;
+            text-align: center;
+            z-index: 2;
+            
+        }
+
+        .hero .logo {
+            position: absolute;
+            top: 50px;
+            left: 60px;
+            z-index: 3;
+        }
+
+        .hero .logo h1 {
+            font-family: "Raleway", sans-serif;
+            font-optical-sizing: auto;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 2px;
+        }
+
+        .hero .logo p {
+            font-family: "Raleway", sans-serif;
+            font-optical-sizing: auto;
+            font-size: 14px;
+            color: #333;
+            margin: 0;
+        }
+
+        .hero .main-title {
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .hero .subtitle {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .hero .btn {
+            background-color: transparent;
+            border: 1px solid #333;
+            padding: 12px 25px;
+            font-size: 0.9rem;
+            color: #333;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background-color: #333;
+            color: white;
+        }
+
+        /* About Section */
+        .about {
+            background-color: #f0f0f5;
+            padding: 80px 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .about-left h2 {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 40px;
+            line-height: 1.2;
+            font-weight: 300;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 350px;
+            background: url('assets/about.jpg') no-repeat center;
+            background-size: cover;
+            border-radius: 8px;
+        }
+
+        .about-right {
+            padding-top: 60px;
+        }
+
+        .about-right p {
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .about-contact-button {
+            background-color: transparent;
+            border: 1px solid #333;
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            color: #333;
+            cursor: pointer;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .about-contact-button:hover {
+            background-color: #333;
+            color: white;
+        }
+
+        /* Why Us Section */
+        .why-us {
+            background-color: #2a2a2a;
+            color: white;
+            padding: 80px 60px;
+        }
+
+        .why-us h2 {
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            line-height: 1.2;
+            font-weight: 300;
+        }
+
+        .reasons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .reason {
+            background-color: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .reason:hover {
+            background-color: rgba(255,255,255,0.25);
+        }
+
+        .reason h3 {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: #f8f8f8;
+            padding: 80px 60px;
+        }
+
+        .services h2 {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+
+        .service h3 {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: white;
+            padding: 80px 60px;
+        }
+
+        .testimonials-header h2 {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .testimonials-header p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+
+        .testimonial {
+            background-color: #f0f0f5;
+            padding: 25px;
+            border-radius: 8px;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .testimonial:hover {
+            background-color: #e0e0eb;
+        }
+
+        .testimonial p {
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial .author {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            position: relative;
+            background-color: #444;
+            color: white;
+            padding: 80px 60px;
+            text-align: center;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            opacity: 0.7;
+            z-index: 0;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            font-weight: 300;
+        }
+
+        .footer-info {
+            margin-bottom: 30px;
+        }
+
+        .footer-info p {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+
+        .contact-button {
+            background-color: transparent;
+            border: 1px solid white;
+            padding: 12px 25px;
+            font-size: 0.9rem;
+            color: white;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: white;
+            color: #333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 0 40px;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .hero .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .about {
+                grid-template-columns: 1fr;
+                padding: 60px 40px;
+                gap: 40px;
+            }
+
+            .about-right {
+                padding-top: 0;
+            }
+            
+            .reasons {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .why-us, .services, .testimonials, .footer {
+                padding: 60px 40px;
+            }
+            
+            .hero .logo {
+                top: 30px;
+                left: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero .logo h1 {
+                font-size: 1rem;
+            }
+            
+            .hero .logo p {
+                font-size: 0.8rem;
+            }
+            
+            .hero .main-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <script>
+        function abrirWhatsapp() {
+            window.open('https://wa.me/5586988741481', '_blank');
+        }
+    </script>
+</head>
+<body>
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="logo">
+                <h1>Rocha & Ramos</h1>
+                <p>Advocacia</p>
+            </div>
+            <div class="hero-content">
+                <h2 class="main-title">Proteja seu negócio</h2>
+                <p class="subtitle">Evite dores de cabeça e garanta a ajuda financeira que sua empresa precisa com a Rocha & Ramos Advocacia</p>
+                <button class="btn" onclick="abrirWhatsapp()">Agende uma consulta gratuita</button>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+            <div class="about-left">
+                <h2>Sua equipe jurídica especializada</h2>
+                <div class="about-image"></div>
+            </div>
+            <div class="about-right">
+                <p>Atuamos com excelência no direito empresarial, oferecendo soluções jurídicas estratégicas para proteger e impulsionar o crescimento da sua empresa. Nosso time combina experiência, atualização constante e comprometimento com resultados.</p>
+                <p>Mais do que advogados, somos parceiros no sucesso do seu negócio. Trabalhamos de forma preventiva e resolutiva, garantindo segurança jurídica e tranquilidade para que você possa focar no que realmente importa: gerir e expandir sua empresa.</p>
+                <button class="about-contact-button" onclick="abrirWhatsapp()">Fale com um especialista</button>
+            </div>
+        </section>
+
+        <!-- Why Us Section -->
+        <section class="why-us">
+            <h2>Por que nos escolher?</h2>
+            <div class="reasons">
+                <div class="reason">
+                    <h3>Conhecemos e dominamos a legislação empresarial</h3>
+                </div>
+                <div class="reason">
+                    <h3>Décadas de experiência jurídica à disposição do seu negócio</h3>
+                </div>
+                <div class="reason">
+                    <h3>Representamos e defendemos os seus interesses</h3>
+                </div>  
+                <div class="reason">
+                    <h3>Oferecemos a orientação jurídica que sua empresa precisa</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services">
+            <h2>Soluções legais</h2>
+            <div class="services-grid">
+                <div class="service">
+                    <h3>Arbitragem e Mediação Empresarial</h3>
+                    <p>Resolução de conflitos corporativos de forma rápida e estratégica, evitando processos longos e custosos.</p>
+                </div>
+                <div class="service">
+                    <h3>Direito Societário</h3>
+                    <p>Assessoria na constituição, alteração e dissolução de empresas, garantindo segurança jurídica em todas as etapas.</p>
+                </div>
+                <div class="service">
+                    <h3>Contratos Empresariais</h3>
+                    <p>Elaboração, revisão e negociação de contratos comerciais, protegendo os interesses da sua empresa.</p>
+                </div>
+                <div class="service">
+                    <h3>Compliance e Governança Corporativa</h3>
+                    <p>Implantação de políticas e práticas para prevenir riscos legais e garantir conformidade com a legislação.</p>
+                </div>
+                <div class="service">
+                    <h3>Propriedade Intelectual</h3>
+                    <p>Proteção de marcas, patentes e direitos autorais, assegurando o valor dos ativos intangíveis da sua empresa.</p>
+                </div>
+                <div class="service">
+                    <h3>Planejamento Tributário Empresarial</h3>
+                    <p>Estratégias para otimizar a carga tributária, sempre em conformidade com a lei.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="testimonials-header">
+                <h2>Depoimentos</h2>
+                <p>O que nossos clientes falam sobre nós</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"O escritório foi essencial para a resolução de um contrato complexo com um fornecedor internacional. Atuação rápida, estratégica e com total segurança jurídica."</p>
+                    <p class="author">- Luciana Marques</p>
+                </div>
+                <div class="testimonial">
+                    <p>"Encontramos no escritório não apenas advogados, mas parceiros de negócios. O suporte preventivo evita problemas e nos dá tranquilidade para focar na expansão."</p>
+                    <p class="author">- Juliana Santos</p>
+                </div>
+                <div class="testimonial">
+                    <p>"A equipe é extremamente profissional e atenta aos detalhes. As soluções apresentadas foram fundamentais para proteger nossos interesses comerciais."</p>
+                    <p class="author">- Marcos Piquet</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h2>Agende uma consulta e fuja do estresse</h2>
+            <div class="footer-info">
+                <p>Av. Homero Castelo Branco, 2958, Ininga - Teresina, Piauí</p>
+                <p>Tel. (86)97877-7878  Email: contato@rochaeramos.com</p>
+            </div>
+            <button class="contact-button" onclick="abrirWhatsapp()">Agende agora</button>
+        </div>
+    </footer>
+</body>
+</html>
